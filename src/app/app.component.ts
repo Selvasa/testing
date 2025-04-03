@@ -4,13 +4,15 @@ import { NavComponent } from "./comp/nav/nav.component";
 
 @Component({
   selector: "app-root",
-  imports: [NavComponent,RouterOutlet],
+  imports: [NavComponent, RouterOutlet],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css"
 })
 export class AppComponent {
   title = 'testing';
   constructor() {
-
+  }
+  ngOnInit() {
+    document.body.classList.toggle('dark')
   }
 }

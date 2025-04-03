@@ -1,10 +1,20 @@
 .login-header {
     background-color: var(--nav-bg-theme);
     color: var(--co-theme);
+    box-shadow: 0px 0px 3px 0px var(--login-bg-theme);
 }
 
 .login-body {
     background-color: var(--login-bg-theme);
     color: var(--co-theme);
-    box-shadow: 0px 0px 3px 0px var(--login-shadow-theme);
+}
+
+.input-theme {
+    background-color: var(--input-bg-theme);
+    color: var(--co-theme);
+    border: 1px solid var(--input-border-theme);
+
+    &:focus {
+        box-shadow: 0 0 0 .05rem var(--input-border-theme);
+    }
 }

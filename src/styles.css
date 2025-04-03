@@ -9,7 +9,9 @@ html, body {
     --co-theme: #000;
     --nav-bg-theme: #dee2e6;
     --login-bg-theme: #f8f8ff;
-    --login-shadow-theme:#ffc107;
+    --login-shadow-theme: #ffc107;
+    --input-bg-theme: #fff;
+    --input-border-theme: #ffc107;
 }
 
 .dark {
@@ -17,7 +19,9 @@ html, body {
     --co-theme: #fff;
     --nav-bg-theme: #212529;
     --login-bg-theme: #495057;
-    --login-shadow-theme:#ffc107;
+    --login-shadow-theme: #ffc107;
+    --input-bg-theme: #0003;
+    --input-border-theme: #ffc107;
 }
 
 body {
