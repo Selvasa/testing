@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+}
+
+
+
+:root {
+    --bg-theme: #fff;
+    --co-theme: #000;
+    --nav-bg-theme: #dee2e6;
+    --login-bg-theme: #f8f8ff;
+    --login-shadow-theme:#ffc107;
+}
+
+.dark {
+    --bg-theme: #343a40;
+    --co-theme: #fff;
+    --nav-bg-theme: #212529;
+    --login-bg-theme: #495057;
+    --login-shadow-theme:#ffc107;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    transition: all .3s;
+    background-color: var(--bg-theme);
+    color: var(--co-theme);
+}

@@ -1,0 +1,25 @@
+.cust-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    background-color: var(--nav-bg-theme);
+}
+
+.nav-left {
+    display: flex;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left-item, .nav-right-item {
+    transition: background-color .4s;
+    padding: 13px 18px;
+
+    &:hover {
+        background-color: orange;
+        cursor: pointer;
+    }
+}

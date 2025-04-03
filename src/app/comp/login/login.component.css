@@ -1,0 +1,10 @@
+.login-header {
+    background-color: var(--nav-bg-theme);
+    color: var(--co-theme);
+}
+
+.login-body {
+    background-color: var(--login-bg-theme);
+    color: var(--co-theme);
+    box-shadow: 0px 0px 3px 0px var(--login-shadow-theme);
+}
