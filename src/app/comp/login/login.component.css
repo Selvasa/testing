@@ -18,3 +18,31 @@
         box-shadow: 0 0 0 .05rem var(--input-border-theme);
     }
 }
+
+input.ng-touched {
+    border: 1px solid var(--input-border-touched);
+}
+
+input.ng-valid {
+    border: 1px solid var(--input-border-theme);
+}
+
+.form-width {
+    width: 35%;
+    transition: all .05s;
+
+    @media(max-width:950px) {
+        width: 40%;
+    }
+
+    @media(max-width:950px) {
+        width: 46%;
+    }
+
+    @media(max-width:700px) {
+        width: 80%;
+    }
+}
+.alert-text{
+    color: var(--alert-text);
+}

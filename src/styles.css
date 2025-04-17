@@ -7,11 +7,15 @@ html, body {
 :root {
     --bg-theme: #fff;
     --co-theme: #000;
-    --nav-bg-theme: #dee2e6;
+    --nav-bg-theme: #ffc107;
+    /* --nav-bg-theme: #dee2e6; */
     --login-bg-theme: #f8f8ff;
     --login-shadow-theme: #ffc107;
     --input-bg-theme: #fff;
     --input-border-theme: #ffc107;
+    --input-border-touched: red;
+    --nav-bg-hover-theme: #fff;
+    --alert-text: orange;
 }
 
 .dark {
@@ -22,6 +26,9 @@ html, body {
     --login-shadow-theme: #ffc107;
     --input-bg-theme: #0003;
     --input-border-theme: #ffc107;
+    --input-border-touched: red;
+    --nav-bg-hover-theme: orange;
+    --alert-text: var(--co-theme)
 }
 
 body {

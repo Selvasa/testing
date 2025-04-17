@@ -1,0 +1,48 @@
+.login-header {
+    background-color: var(--nav-bg-theme);
+    color: var(--co-theme);
+    box-shadow: 0px 0px 3px 0px var(--login-bg-theme);
+}
+
+.login-body {
+    background-color: var(--login-bg-theme);
+    color: var(--co-theme);
+}
+
+.input-theme {
+    background-color: var(--input-bg-theme);
+    color: var(--co-theme);
+    border: 1px solid var(--input-border-theme);
+
+    &:focus {
+        box-shadow: 0 0 0 .05rem var(--input-border-theme);
+    }
+}
+
+input.ng-touched {
+    border: 1px solid var(--input-border-touched);
+}
+
+input.ng-valid {
+    border: 1px solid var(--input-border-theme);
+}
+
+.form-width {
+    width: 35%;
+    transition: all .05s;
+
+    @media(max-width:950px) {
+        width: 40%;
+    }
+
+    @media(max-width:950px) {
+        width: 46%;
+    }
+
+    @media(max-width:700px) {
+        width: 80%;
+    }
+}
+.alert-text{
+    color: var(--alert-text);
+}

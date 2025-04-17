@@ -1,1 +1,41 @@
-<p>register works!</p>
+<div class="card mx-auto form-width mt-4 border-0">
+    <div class="card-header text-center login-header">
+        Register
+    </div>
+    <div class="card-body login-body">
+        <form class="mt-4" [formGroup]="registerForm" (ngSubmit)="toSignUp()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input name="name" type="text" formControlName="name" id="name" class="form-control input-theme mt-2">
+                @if(this.registerForm.get('name')?.touched&&this.registerForm.get('name')?.invalid){
+                <small class="alert-text">Please Enter the name</small>
+                }
+            </div>
+            <div class="form-group mt-4">
+                <label for="email">Email</label>
+                <input name="email" type="text" formControlName="email" id="email"
+                    class="form-control input-theme mt-2">
+                @if(this.registerForm.get('email')?.touched&&this.registerForm.get('email')?.invalid){
+                <small class="alert-text">Please Enter the Email</small>
+                }
+            </div>
+            <div class="form-group mt-4">
+                <label for="password">Password</label>
+                <input name="password" type="password" formControlName="password" id="password"
+                    class="form-control input-theme mt-2" required>
+                @if(this.registerForm.get('password')?.touched&&this.registerForm.get('password')?.invalid){
+                <small class="alert-text">Please Enter the Password</small>
+                }
+            </div>
+            <div class="form-group mt-4">
+                <div>
+                    <button type="submit" class="btn btn-secondary btn-sm"
+                        [disabled]="registerForm.invalid">Register</button>&nbsp;
+                    <span>or</span>&nbsp;
+                    <button type="button" class="btn btn-warning btn-sm" routerLink="/login">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-actions"></div>
+</div>

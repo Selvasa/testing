@@ -1,18 +1,30 @@
 import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { Router, RouterOutlet } from "@angular/router";
 import { NavComponent } from "./comp/nav/nav.component";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-root",
-  imports: [NavComponent, RouterOutlet],
+  imports: [ RouterOutlet, CommonModule],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css"
 })
 export class AppComponent {
   title = 'testing';
-  constructor() {
+  isShowNav = true;
+  constructor(private router: Router) {
   }
   ngOnInit() {
-    document.body.classList.toggle('dark')
+    let url = this.router.url
+    console.log(url);
+    // document.body.classList.toggle('dark')
+  }
+  ngDoCheck() {
+    if (this.router.url === "/login" || this.router.url === "/register") {
+      this.isShowNav = false;
+    }
+    else{
+      this.isShowNav=true
+    }
   }
 }

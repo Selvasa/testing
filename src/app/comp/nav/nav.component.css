@@ -19,7 +19,11 @@
     padding: 13px 18px;
 
     &:hover {
-        background-color: orange;
+        background-color: var(--nav-bg-hover-theme);
         cursor: pointer;
     }
+}
+
+.active {
+    background-color: var(--nav-bg-hover-theme);
 }
