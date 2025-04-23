@@ -1,5 +1,6 @@
-import { Component, ElementRef, input, ViewChild, viewChild } from '@angular/core';
+import { Component, ElementRef, inject, input, ViewChild, viewChild } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,6 +10,8 @@ import { RouterLink, RouterModule } from '@angular/router';
 })
 export class NavComponent {
   // themeRef = viewChild('')
+  private auth = inject(AuthService);
+  
   isDarkTheme = input(false)
   @ViewChild('theme') themeRef!: ElementRef;
 
@@ -19,4 +22,8 @@ export class NavComponent {
       this.themeRef.nativeElement.classList.toggle('bi-lightning-fill')
     }
   }
+
+  logout() {
+    this.auth.logout();
+      }
 }

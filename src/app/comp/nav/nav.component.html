@@ -7,8 +7,9 @@
         <div class="nav-left-item" routerLinkActive="active" routerLink="help">Help</div>
     </div>
     <div class="nav-right">
-        <div class="nav-right-item" routerLink="/login">Log In</div>
+        <div class="nav-right-item" (click)="logout()">Log out</div>
         <div class="nav-right-item" (click)="toggleTheme()"> <i class="bi bi-lightning-fill" #theme></i>
         </div>
     </div>
 </div>
+<router-outlet></router-outlet>

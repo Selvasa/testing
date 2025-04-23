@@ -15,6 +15,7 @@ export class LoginComponent {
   private service = inject(AuthService);
   private router = inject(Router);
   private toster = inject(ToastrService);
+  private auth = inject(AuthService)
   message = ''
   login = {
     email: '',
@@ -23,12 +24,19 @@ export class LoginComponent {
 
   toLogIn(data: any) {
     this.service.login(data.value).subscribe((res: any) => {
-      localStorage.setItem("token", res.token)
-      this.toster.success(res?.msg, '', { positionClass: "toast-top-right", closeButton: true });
+      console.log(res);
+      
+      localStorage.setItem("token", res?.token?.tokens)
+      this.toster.success(res?.message, '', { positionClass: "toast-top-right" });
       this.router.navigateByUrl('home');
+      console.log(res);
+      
+      this.auth.autoLogout(res?.token?.expiresIn);
     }, (err: any) => {
+      console.log(err);
+      
       this.message = err?.error?.message;
-      this.toster.error(this.message, '', { positionClass: "toast-top-right",closeButton: false });
+      this.toster.error(this.message, '', { positionClass: "toast-top-right" });
     })
 
   }

@@ -14,11 +14,6 @@ export class AppComponent {
   isShowNav = true;
   constructor(private router: Router) {
   }
-  ngOnInit() {
-    let url = this.router.url
-    console.log(url);
-    // document.body.classList.toggle('dark')
-  }
   ngDoCheck() {
     if (this.router.url === "/login" || this.router.url === "/register") {
       this.isShowNav = false;

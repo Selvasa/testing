@@ -1,1 +1,38 @@
-<p>home works!</p>
+<h2>Structural Directives</h2>
+<div>
+    <button class="btn btn-outline-secondary btn-sm" (click)="approved(true)">approved</button>
+    <button class="btn btn-outline-secondary btn-sm" (click)="rejected(false)">Rejected</button>
+</div>
+<div>
+    <p *ngIf="shaowValue() ;else ref">Your form is approved</p>
+    <ng-template #ref>Your form is rejected</ng-template>
+</div>
+<div>
+    <input type="number" name="number" [(ngModel)]="number" />
+    <div [ngSwitch]="number()">
+        <p *ngSwitchCase="1">one</p>
+        <p *ngSwitchCase="2">two</p>
+        <p *ngSwitchCase="3">three</p>
+        <p *ngSwitchCase="4">four</p>
+        <p *ngSwitchCase="5">five</p>
+        <p *ngSwitchCase="6">six</p>
+        <p *ngSwitchCase="7">seven</p>
+        <p *ngSwitchDefault>default</p>
+    </div>
+</div>
+<div class="row w-100 gap-3">
+    <div
+        class="col-6 p-0 border-end border-2 border-primary d-flex flex-column align-items-center justify-content-center">
+        <button class="btn btn-primary mb-3" (click)="calculate(2)">divisible by 2</button><br>
+        <button class="btn btn-primary mb-3" (click)="calculate(3)">divisible by 3</button><br>
+        <button class="btn btn-primary mb-3" (click)="calculate(4)">divisible by 4</button><br>
+        <button class="btn btn-primary mb-3" (click)="calculate(5)">divisible by 5</button><br>
+        <button class="btn btn-primary" (click)="calculate(0)"> reset</button>
+    </div>
+    <div class=" row col-6 p-0">
+        <p class="col-2 active mb-0 text-center p-0 mb-3" [ngClass]="{'active':num%number()==0}" *ngFor="let num of arr">
+            {{num}}
+        </p>
+        <p class="text-success fw-bolder mt-3">number is divisible by {{number()}}</p>
+    </div>
+</div>
