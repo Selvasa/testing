@@ -3,10 +3,11 @@ import { CommonService } from '../../service/common.service';
 import { single } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CustDir } from '../../directives/custone.directive';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CustDir],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -17,12 +18,9 @@ export class HomeComponent {
   arr: number[] = [];
 
   ngOnInit() {
-    console.log('res');
     this.service.verifyData().subscribe((res: any) => {
-      console.log(res);
     })
     this.oneto50();
-    console.log(this.arr);
 
   }
 
@@ -39,7 +37,6 @@ export class HomeComponent {
     }
   }
   calculate(num?: any) {
-    // console.log(num);
     this.number.set(num)
 
   }

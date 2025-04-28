@@ -24,17 +24,11 @@ export class LoginComponent {
 
   toLogIn(data: any) {
     this.service.login(data.value).subscribe((res: any) => {
-      console.log(res);
-      
       localStorage.setItem("token", res?.token?.tokens)
       this.toster.success(res?.message, '', { positionClass: "toast-top-right" });
+      // this.auth.autoLogout(res?.token?.expiresIn);
       this.router.navigateByUrl('home');
-      console.log(res);
-      
-      this.auth.autoLogout(res?.token?.expiresIn);
     }, (err: any) => {
-      console.log(err);
-      
       this.message = err?.error?.message;
       this.toster.error(this.message, '', { positionClass: "toast-top-right" });
     })

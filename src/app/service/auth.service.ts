@@ -9,7 +9,7 @@ export class AuthService {
     private http = inject(HttpClient);
     private route = inject(Router)
     private toastr = inject(ToastrService)
-    timer: any = null;
+    timers: any = null;
     login(data: any) {
         return this.http.post(endPoints("login"), data)
     }
@@ -22,15 +22,17 @@ export class AuthService {
         const user = localStorage.removeItem("token");
         this.route.navigateByUrl("login");
         this.toastr.success("Logout Successfully", "", { positionClass: "toast-top-right" })
-        if (this.timer) {
-            clearTimeout(this.timer);
-        }
-        this.timer = null
+        // if (this.timers) {
+        //     console.log("timer is cleared");
+        //     clearTimeout(this.timers);
+        //     this.timers = null
+        // }
     }
-    autoLogout(timer: any) {
-        this.timer = setTimeout(() => {
-            console.log('date', timer);
-            this.logout();
-        }, timer)
-    }
+    // autoLogout(timer: any) {
+    //     console.log('date', timer);
+    //     this.timers = setTimeout(() => {
+    //         console.log('datessss', timer);
+    //         this.logout();
+    //     }, timer)
+    // }
 }
